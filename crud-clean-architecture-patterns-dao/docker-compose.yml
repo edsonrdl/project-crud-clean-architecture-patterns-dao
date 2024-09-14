@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senhapostgresql
+      POSTGRES_DB: clean_architecture_paterns_dao_db
+    networks:
+      - default
+    restart: always
+
+  app:
+    image: crud-patterns-dao:latest
+    depends_on:
+      - db
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env 
+    networks:
+      - default
+    restart: always
+
+networks:
+  default:
+    driver: bridge
