@@ -2,25 +2,37 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:latest
+      image: postgres:latest
+      ports:
+        - "5433:5432"
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: senhapostgresql
+        POSTGRES_DB: clean_architecture_patterns_dao_db
+      networks:
+        - default
+      restart: always
+
+  redis:
+    image: redis:latest
     ports:
-      - "5433:5432"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: senhapostgresql
-      POSTGRES_DB: clean_architecture_paterns_dao_db
+      - "6379:6379"
     networks:
       - default
     restart: always
-
   app:
     image: crud-patterns-dao:latest
     depends_on:
       - db
+      - redis
     ports:
       - "8080:8080"
-    env_file:
-      - .env 
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/clean_architecture_patterns_dao_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: senhapostgresql
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
     networks:
       - default
     restart: always
