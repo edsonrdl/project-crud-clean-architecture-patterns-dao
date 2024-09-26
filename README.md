@@ -27,7 +27,7 @@ Back end
 
 ## Padrão de arquitetura em camadas
 -**Clean Architecture**
-![alt text](./src//main//resources/imgReadme/img-clean-architecture.png)
+![alt text](./imgReadme/img-clean-architecture.png)
 
 ## Padrão de Persistencia de dados 
 --**DAO (Data Access Object)**--
@@ -63,21 +63,21 @@ Você pode verificar se o container está em execução com:
 docker ps
 ```
 --**Container no docker compose!**--
-![alt text](./src//main//resources/imgReadme/img-container-redis.png)
+![alt text](./imgReadme/img-container-redis.png)
 --**Chave e valor no redis desktop referente aos dados já em memória com o tempo de 10 segundos para inspirar !**--
-![alt text](./src//main//resources/imgReadme/img-redis-desktop-key-value.png)
+![alt text](./imgReadme/img-redis-desktop-key-value.png)
 ## Interface Cadastro de Usuário
 Acessar usando o : 
 --**Página com tabela de dados já carregada!**--
-![alt text](./src//main//resources/imgReadme/img-1.png)
+![alt text](./imgReadme/img-1.png)
 --**Pesquisando usuário pelo código do usuário!**--
-![alt text](./src//main//resources/imgReadme/img-2.png)
+![alt text](./imgReadme/img-2.png)
 --**Novo cliente**--
-![alt text](./src//main//resources/imgReadme/img-3.png)
+![alt text](./imgReadme/img-3.png)
 --**Atualizando cliente**--
-![alt text](./src//main//resources/imgReadme/img-4.png)
+![alt text](./imgReadme/img-4.png)
 --**Deletando cliente**--
-![alt text](./src//main//resources/imgReadme/img-5.png)
+![alt text](./imgReadme/img-5.png)
 
 
 ## Apartir do DockerFile e docker-compose-yml gerar a imagem da aplicação !
@@ -99,11 +99,11 @@ docker-compose up --build
 
 Gerado as imagens 
 
-![alt text](./src//main//resources/imgReadme/img-6.png)
+![alt text](./imgReadme/img-6.png)
 
 Container levantado e enviado uma requisição de post
 
-![alt text](./src//main//resources/imgReadme/img-7.png)
+![alt text](./imgReadme/img-7.png)
 
 
 
